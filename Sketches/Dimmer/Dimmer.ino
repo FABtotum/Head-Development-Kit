@@ -1,17 +1,70 @@
-/********** Conf **********/
+/**
+ * HDB Dimmer
+ * 
+ * Implements a simple dimmer for Nano's onboard led (pin 13).
+ * Light intensity can be commanded from the FABtotum user interface.
+ * 
+ * 
+ * Steps to run:
+ * 
+ * Set a custom head id for your head:
+ * 
+ *   M793 S100
+ * 
+ * with any number equal or above 100.
+ * 
+ * Enable communication for the current head:
+ * 
+ *   M563 P0 S1
+ * 
+ * Configure communication parameters
+ * 
+ *   M575 P4 R<rx_pin> T<tx_pin> B<BAUDRATE>
+ * 
+ * where:
+ * 
+ *   <rx_pin>, <tx_pin> depend on HDB-Nano wiring
+ * 
+ *   <BAUDRATE> is as #define's later in this sketch
+ *  
+ * Send a command:
+ * 
+ *   M790 P4 "<cmd>"
+ * 
+ * where <cmd> is any of:
+ * 
+ *   0-9 to set led's intensity
+ *   +/- to increment/decrement led's intensity
+ */ 
 
-#define hdb_BAUD 1200
+/**
+ * Configuration
+ */
+
+#define sRX   0
+#define sTX   1
+#define BAUDRATE 9600
+
 #define LED 13
 
-/**************************/
+/**
+ * Sketch
+ */
 
 #include <Arduino.h>
+
+#if (sRX != 0) || (sTX != 1)
+   #include <SoftwareSerial.h>
+   #define Serial softSerial
+
+   SoftwareSerial softSerial(sRX, sTX);
+#endif
 
 void setup ()
 {
    pinMode(LED, OUTPUT);
 
-   Serial.begin(hdb_BAUD);
+   Serial.begin(BAUDRATE);
 }
 
 void loop ()

@@ -10,7 +10,10 @@ Contents of the repository:
 ### Sketches
 The *Sketches* folder contains Arduino sketches that can be run on a Arduino Nano or similar development boards mounted on the FABtotum Personal Fabricator through a HDB.
 
-All sketches require the latest development version of FABlin. You can compile it yourself from [source](https://github.com/FABtotum/FABlin/tree/development) or flash the precompiled [hex file](https://github.com/FABtotum/Head-Development-Kit/blob/master/FABlin/Marlin.cpp.hex) given in this repository.
+All sketches require the latest development version of FABlin. You can compile
+it yourself from [source](https://github.com/FABtotum/FABlin/tree/development)
+or flash the precompiled [hex file](https://github.com/FABtotum/Head-Development-Kit/blob/master/Firmware/FABlin-1.0.0096.hex)
+given in this repository.
 
 Sketches available:
 

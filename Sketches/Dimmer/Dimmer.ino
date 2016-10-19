@@ -11,9 +11,9 @@
  * 
  *   M793 S100
  * 
- * with any number equal or above 100.
+ * with any number equal to 100 or above.
  * 
- * Enable communication for the current head:
+ * Enable communication for the default head:
  * 
  *   M563 P0 S1
  * 
@@ -23,9 +23,9 @@
  * 
  * where:
  * 
- *   <rx_pin>, <tx_pin> depend on HDB-Nano wiring
+ *   <rx_pin>, <tx_pin> depend on the Nano-HDB wiring (see below)
  * 
- *   <BAUDRATE> is as #define's later in this sketch
+ *   <BAUDRATE> is as #define'd later in this sketch
  *  
  * Send a command:
  * 
@@ -35,7 +35,40 @@
  * 
  *   0-9 to set led's intensity
  *   +/- to increment/decrement led's intensity
- */ 
+ */
+
+/**
+ * Wiring
+ * 
+ * Possible wirings (Nano <-> HDB <-> TOTUMduino):
+ * 
+ *  Nano    HDB
+ * -------------
+ * 
+ *  RX0 <-> SDA <---.
+ *  TX1 <-> PWM <-   \
+ *                |   |
+ *                v   v
+ *      M575  P4 R11 T20 B...
+ * 
+ * -------------
+ *
+ *  RX0 <-> SCL <---.
+ *  TX1 <-> PWM <-   \
+ *                |   |
+ *                v   v
+ *      M575  P4 R11 T21 B...
+ */
+
+/**
+ * Baud rates
+ * 
+ * Available baud rates:
+ * 
+ *  300 600 1200 2400 4800 9600 14400 19200 28800 31250 38400 57600
+ * 
+ * Suggested rates fall between 9600 and 38400.
+ */
 
 /**
  * Configuration

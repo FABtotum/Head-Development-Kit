@@ -19,3 +19,7 @@ Sketches available:
 
 #### [Dimmer](https://github.com/FABtotum/Head-Development-Kit/tree/master/Sketches/Dimmer)
 A simple example that shows how to command led luminosity on an Arduino Nano mounted on the head slot through the HDB.
+
+### Simple HDB Support
+You can self-print and make use of this barebone support for the HDB while hacking your custom heads:
+http://www.thingiverse.com/thing:1832391

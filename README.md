@@ -18,12 +18,13 @@ Checklist
 Some more detail
 --------------
 
-### Simple HDB Support
+### HDB Support
 
-You can self-print and make use of this barebone support for the HDB 
-while hacking on your custom heads: 
+You can self-print and make use of this barebone support for the HDB to
+hack on your custom heads: http://www.thingiverse.com/thing:1832391
 
-http://www.thingiverse.com/thing:1832391
+Source CAD models are available in [HDB Support](HDB Support), in
+Autodesk Inventor (.ipt) and STEP (.stp) formats.
 
 
 ### Sketches

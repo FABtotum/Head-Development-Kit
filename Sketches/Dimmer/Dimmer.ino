@@ -6,18 +6,20 @@
  * 
  * Compatible with:
  * 
- *  Arduino Nano-like boards with ATmega 328 microcontroller
+ *  Arduino Nano-like boards sporting an ATmega 168/328 microcontroller
  */
 
 /**
  * Wiring
+ * 
+ * See wiring.png for wiring diagram to an Arduino Nano v3
  *
  * Possible wirings (Nano <-> HDB <-> TOTUMduino) and corresponding
- * configuration parameters:
+ * FABlin configuration parameters:
  * 
  *  Nano    HDB
  * -------------
- *  +5V <-> ARDUINO  
+ *  +5V <-> ARDUINO +
  *  GND <-> ARDUINO GND
  *  RX0 <-> SDA <---.
  *  TX1 <-> PWM <-   \
@@ -27,7 +29,7 @@
  * 
  *  Nano    HDB
  * -------------
- *  +5V <-> ARDUINO  
+ *  +5V <-> ARDUINO +
  *  GND <-> ARDUINO GND
  *  RX0 <-> SCL <---.
  *  TX1 <-> PWM <-   \
@@ -94,7 +96,7 @@
 
 /*
  * You should not need to change the following, but if you do, it will switch from
- * the predefined hardware serial interface to a software serial implementation.
+ * the predefined hardware serial interface to the software serial library.
  */
 
 #define sRX   0

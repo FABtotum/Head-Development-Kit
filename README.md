@@ -12,7 +12,7 @@ Checklist
 - **Get** the complete [Head Development Kit](https://store.fabtotum.com/intl/head-development-kit.html)
 - **Print** the simple [HDB support](http://www.thingiverse.com/thing:1832391)
 - Get **inspired** by example [sketches](Sketches)
-- **Learn** from the detailed [documentation](Sketches)
+- **Learn** from the detailed [documentation](Documentation)
 
 
 Some more detail

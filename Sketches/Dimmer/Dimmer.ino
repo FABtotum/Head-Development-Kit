@@ -1,22 +1,22 @@
 /**
  * HDB Dimmer
- * 
+ *
  * Implements a simple dimmer for the onboard led. Light intensity can be
  * commanded from the FABtotum user interface.
- * 
+ *
  * Compatible with:
- * 
+ *
  *  Arduino Nano-like boards sporting an ATmega 168/328 microcontroller
  */
 
 /**
  * Wiring
- * 
+ *
  * See wiring.png for wiring diagram to an Arduino Nano v3
  *
  * Possible wirings (Nano <-> HDB <-> TOTUMduino) and corresponding
  * FABlin configuration parameters:
- * 
+ *
  *  Nano    HDB
  * -------------
  *  +5V <-> ARDUINO +
@@ -26,7 +26,7 @@
  *                |   |
  *                v   v
  *      M575  P4 R11 T20 B...
- * 
+ *
  *  Nano    HDB
  * -------------
  *  +5V <-> ARDUINO +
@@ -40,52 +40,62 @@
 
 /**
  * Steps to run:
- * 
+ *
  * - Flash this sketch to your board.
- * 
- * - Wire your board to the HDB and install on your FABtotum.
- * 
+ *
+ * - Wire your board to the HDB and plug it onto your FABtotum.
+ *
+ * - In FAB-UI, set the currently installed head as 'Milling Head V2' to
+ *   have a neutral starting point.
+ *
  * - Inside FAB-UI jog page:
- * 
+ *
  *   Set a custom head id for your head:
- * 
+ *
  *     M793 S100
- * 
- *   with any number equal to 100 or above.
- * 
+ *
+ *   with any number equal to 100 or above. If the printers gives out any error, clear them with:
+ *
+ *     M999
+ *
  *   Enable communication for the default head:
- * 
+ *
  *     M563 P0 S1
- * 
+ *
  *   Configure communication parameters
- * 
+ *
  *     M575 P4 R<rx_pin> T<tx_pin> B<BAUDRATE>
- * 
+ *
  *   where:
- * 
+ *
  *     <rx_pin>, <tx_pin> depend on the Nano-HDB wiring (refer to Wiring)
  *     <BAUDRATE> is as #define'd later in this sketch (refer to Configuration)
- *  
+ *
  *   Send a command:
- * 
+ *
  *     M790 P4 "<cmd>"
- * 
+ *
  *   where <cmd> is any of:
- * 
+ *
  *     0-9 to set led's intensity
  *     +/- to increment/decrement led's intensity
+ *
+ *
+ * Pro tip:
+ *
+ * In FAB-UI/Colibri, you can automate the above procedure by defining a custom head.
  */
 
 /**
  * Configuration
- * 
+ *
  * You can change the desired communication baudrate and customize your
  * led's pin number.
- * 
+ *
  * Available baud rates:
- * 
+ *
  *  300 600 1200 2400 4800 9600 14400 19200 28800 31250 38400 57600
- * 
+ *
  * Suggested rates fall between 9600 and 38400.
  */
 

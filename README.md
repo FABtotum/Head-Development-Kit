@@ -23,7 +23,7 @@ Some more detail
 You can self-print and make use of this barebone support for the HDB to
 hack on your custom heads: http://www.thingiverse.com/thing:1832391
 
-Source CAD models are available in [HDB Support](HDB Support), in
+Source CAD models are available inside [HDB Support](/FABtotum/Head-Development-Kit/tree/master/HDB+Support), in
 Autodesk Inventor (.ipt) and STEP (.stp) formats.
 
 

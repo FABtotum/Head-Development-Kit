@@ -121,16 +121,23 @@
 
 #if (sRX != 0) || (sTX != 1)
    #include <SoftwareSerial.h>
-   #define Serial softSerial
+   #define Main    softSerial
+   #define Monitor Serial
 
-   SoftwareSerial softSerial(sRX, sTX);
+   SoftwareSerial Main(sRX, sTX);
+#else
+   #define Main Serial
 #endif
 
 void setup ()
 {
    pinMode(LED, OUTPUT);
 
-   Serial.begin(BAUDRATE);
+   Main.begin(BAUDRATE);
+#ifdef Monitor
+   Monitor.begin(9600);
+   Monitor.println("start");
+#endif
 }
 
 void loop ()
@@ -150,9 +157,14 @@ void loop ()
       digitalWrite(LED,0);
    }
 
-   while (Serial.available())
+   while (Main.available())
    {
-      register unsigned char chin = Serial.read();
+      register unsigned char chin = Main.read();
+#ifdef Monitor
+      Monitor.write("rx ");
+      Monitor.write(chin);
+      Monitor.println("");
+#endif
       switch (chin)
       {
          case '+':
@@ -173,5 +185,7 @@ void loop ()
                power = 28 * (chin - '0');
             }
       }
+
+      Main.println(power);
    }
 }

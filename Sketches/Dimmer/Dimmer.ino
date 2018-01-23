@@ -2,7 +2,7 @@
  * HDB Dimmer
  *
  * Implements a simple dimmer for the onboard led. Light intensity can be
- * commanded from the FABtotum user interface.
+ * commanded from the FABtotum Jog page.
  *
  * Compatible with:
  *
@@ -15,7 +15,7 @@
  * See wiring.png for wiring diagram to an Arduino Nano v3
  *
  * Possible wirings (Nano <-> HDB <-> TOTUMduino) and corresponding
- * FABlin configuration parameters:
+ * FABlin serial configuration parameters:
  *
  *  Nano    HDB
  * -------------
@@ -41,28 +41,29 @@
 /**
  * Steps to run:
  *
- * - Flash this sketch to your board.
+ * - Flash this sketch to your board and wire it to your HDB according to
+ *   the diagrams above.
  *
- * - Wire your board to the HDB and plug it onto your FABtotum.
+ * - In FAB-UI's jog page enter the following commands:
  *
- * - In FAB-UI, set the currently installed head as 'Milling Head V2' to
- *   have a neutral starting point.
+ *     M793 S0
+ *     M563 P0 H-1
  *
- * - Inside FAB-UI jog page:
+ *   These will disable the current head and temperature management
+ *   for the default tool configuration
  *
- *   Set a custom head id for your head:
+ * - You can now physically uninstall the current head and swap it with
+ *   the HDB in a safe way
+ *
+ * - Set a custom head id for your head, e.g.:
  *
  *     M793 S100
  *
- *   with any number equal to 100 or above. If the printers gives out any error, clear them with:
- *
- *     M999
- *
- *   Enable communication for the default head:
+ * - Enable communication for the default tool:
  *
  *     M563 P0 S1
  *
- *   Configure communication parameters
+ * - Configure communication parameters
  *
  *     M575 P4 R<rx_pin> T<tx_pin> B<BAUDRATE>
  *
@@ -71,7 +72,7 @@
  *     <rx_pin>, <tx_pin> depend on the Nano-HDB wiring (refer to Wiring)
  *     <BAUDRATE> is as #define'd later in this sketch (refer to Configuration)
  *
- *   Send a command:
+ * - Send a command:
  *
  *     M790 P4 "<cmd>"
  *

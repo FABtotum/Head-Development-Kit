@@ -47,7 +47,6 @@
  * - In FAB-UI's jog page enter the following commands:
  *
  *     M793 S0
- *     M563 P0 H-1
  *
  *   These will disable the current head and temperature management
  *   for the default tool configuration

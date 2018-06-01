@@ -5,18 +5,19 @@
  *
  * Description:
  * 
- * 	This sketch can dynamically control IO pins, manage a Wire connetcion
- * and a SoftwareSerial instance on an arbitraty peir of pins. Control
+ * 	This sketch can dynamically control IO pins, manage a Two-Wire connection
+ * and a SoftwareSerial instance on an arbitraty pair of pins. Control
  * commands and responses can be given through the main serial interface.
  * 
- *  The Two-Wire driver can be setup to automatically respond to requests.
+ *  The Two-Wire module can be setup to automatically respond to requests.
  * 
  *  This can also be useful to debug the connected electronics or the
  * firmware.
  * 
- *  The control language is schematic enough to be interfaced to another
- * program but not so much that it can't be used by manual input. All commands
- * are two-letter and the output lines are reminiscent of the reprap guidelines
+ *  The control language is schematic enough to be processed by a higher-level
+ * controlling program but not so much that it can't be used by hand for
+ * quick operations. All commands are two-letter and the output format is
+ * reminiscent of the reprap guidelines
  * (as in http://reprap.org/wiki/G-code#Replies_from_the_RepRap_machine_to_the_host_computer).
  * 
  * 

@@ -51,3 +51,6 @@ of the [released](/FABtotum/FABlin/releases) hex images.
 - [**Dimmer**](https://github.com/FABtotum/Head-Development-Kit/tree/master/Sketches/Dimmer):
   A simple example that shows how to command led luminosity on an
   Arduino Nano mounted on the head slot through the HDB.
+- [**Tester**](https://github.com/FABtotum/Head-Development-Kit/tree/master/Sketches/Tester):
+  A more complete example that let you interactively debug IO and communication on the HDB (beware of 24Vdc lines though ;)
+  With this sketch you'll be able to dynamically set IO pins' modes and levels. It is also able to setup a serial interface or a Two Wire interface.
